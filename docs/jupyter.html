@@ -13074,31 +13074,37 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered celltag_remove_cell"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introdu&#231;&#227;o">Introdu&#231;&#227;o<a class="anchor-link" href="#Introdu&#231;&#227;o">&#182;</a></h1><p>A partir do post <a title="Link do Folium" href="http://mateos.io/blog/jupyter-notebook-in-git/" target="_blank">**_How to Git Jupyter Notebooks the Right Way_**</a>, compreendi que é a partir da instalaçao do package <em>nbstripout</em> que é possível fazer o git de arquivos <em>ipynb</em>.</p>
-<p>Em uma tentativa de exportar para pdf, tive problemas. Não exportava.</p>
-<p>Descobri que é necessário ter o
-sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended
-ou
-sudo apt-get install texlive-full</p>
-<p><em>nbconvert failed: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at <a href="https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex">https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex</a>.</em></p>
-
+<p><h1>Sumário<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Export" data-toc-modified-id="Export-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Export</a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Outros" data-toc-modified-id="Outros-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Outros</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Requirements</a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered celltag_remove_cell"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Get-Jupyter-Notebook-filename">Get <em>Jupyter Notebook</em> filename<a class="anchor-link" href="#Get-Jupyter-Notebook-filename">&#182;</a></h1><p><a href="https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name">https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name</a></p>
+<h1 id="Introdu&#231;&#227;o">Introdu&#231;&#227;o<a class="anchor-link" href="#Introdu&#231;&#227;o">&#182;</a></h1><p>O <em>Jupyter Notebook</em> é a maneira que optei para escrever os códigos na linguagem <em>Python</em>, visto que além de rodar os códigos, é possível:</p>
+<ol>
+<li>Documentar os <em>scripts</em>, escrevendo o singnificado e objetivo de cada conjunto de comandos;</li>
+<li>Atualizar os meus repositórios na plataforma <strong>GitHub</strong>;</li>
+<li>Trabalhar com uma diversidade de opções de exportação do arquivo em formatos diversos, adaptados até mesmo para as simples leitura, como PDFs e Markdowns.</li>
+</ol>
+<p>É no procesos de exportação dos arquivos que eu me ative nessa publicação, pois um dos objetivos de longo prazo que busco é exportar relatórios padronizados, para distribuição geral e irrestrita, ou seja, quero algo que não seja inteligível apenas por pessoas que conhecem de programação.</p>
+<p>Para isso foram aqui apresentados um diversidade de opções para exportação de um arquivo <em>.ipynb</em>, sendo possível incluir com campos determinados, tais como:</p>
+<ul>
+<li>Apenas as células que tenham determinada <em>tag</em>;</li>
+<li>Apenas as células de <em>markdown</em>;</li>
+<li>Excluindo as células de <em>outputs</em>.</li>
+</ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_remove_cell">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/files/create_folders.py&#39;
@@ -13120,7 +13126,7 @@ sudo apt-get install texlive-full</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Directory &#34;docs&#34; created!
+<pre>Directory &#34;docs&#34; already exists...
 </pre>
 </div>
 </div>
@@ -13128,6 +13134,14 @@ sudo apt-get install texlive-full</p>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_remove_cell"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Get-Jupyter-Notebook-filename">Get <em>Jupyter Notebook</em> filename<a class="anchor-link" href="#Get-Jupyter-Notebook-filename">&#182;</a></h1><p><a href="https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name">https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name</a></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_remove_cell">
 <div class="input">
@@ -13158,10 +13172,10 @@ sudo apt-get install texlive-full</p>
 
 
 
-<div id="46a5633c-d5f7-4698-a8b8-cfcfc1b05a97"></div>
+<div id="11bd8074-3c7b-4fb7-b414-eeb9b0d9e85b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#46a5633c-d5f7-4698-a8b8-cfcfc1b05a97');
+var element = $('#11bd8074-3c7b-4fb7-b414-eeb9b0d9e85b');
 
 var kernel = IPython.notebook.kernel;
 var body = document.body, attribs = body.attributes;
@@ -13215,22 +13229,7 @@ kernel.execute(command);
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %load &#39;../codes/files/get_jupyternotebook_name.py&#39;</span>
-<span class="k">def</span> <span class="nf">get_jupyternotebook_name</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the name of the current notebook as a string</span>
-<span class="sd">    From https://mail.scipy.org/pipermail/ipython-dev/2014-June/014096.html</span>
-<span class="sd">    :return: Returns the name of the current notebook as a string</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Import Packages</span>
-    <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">Javascript</span>
-    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-
-    <span class="n">display</span><span class="p">(</span><span class="n">Javascript</span><span class="p">(</span><span class="s1">&#39;IPython.notebook.kernel.execute(&quot;theNotebook = &quot; + </span><span class="se">\</span>
-<span class="s1">    &quot;</span><span class="se">\&#39;</span><span class="s1">&quot;+IPython.notebook.notebook_name+&quot;</span><span class="se">\&#39;</span><span class="s1">&quot;);&#39;</span><span class="p">))</span>
-
-    <span class="c1"># Result</span>
-    <span class="k">return</span> <span class="n">theNotebook</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#%run &#39;../codes/files/get_jupyternotebook_name.py&#39;</span>
 </pre></div>
 
     </div>
@@ -13240,7 +13239,7 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#get_jupyternotebook_name()</span>
@@ -13280,10 +13279,10 @@ kernel.execute(command);
 
 
 
-<div id="9570ee9e-fe75-4a29-a01a-610f5ac83c45"></div>
+<div id="1b84d27c-42ff-4860-93c7-ea001cac5544"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9570ee9e-fe75-4a29-a01a-610f5ac83c45');
+var element = $('#1b84d27c-42ff-4860-93c7-ea001cac5544');
 
 var kernel = IPython.notebook.kernel;
 var nb = IPython.notebook;
@@ -13341,7 +13340,7 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/files/export_jupyter.py&#39;
@@ -13375,6 +13374,76 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import os</span>
+<span class="c1">#os.system(&#39;jupyter-nbconvert --to python jupyter.ipynb&#39;)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#--stdout</span>
+<span class="c1">#--TemplateExporter.exclude_input_prompt=True&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter-nbconvert jupyter.ipynb<span class="err">\</span>
+<span class="o">--</span><span class="n">to</span> <span class="n">markdown</span>\
+<span class="o">--</span><span class="n">TagRemovePreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">ClearOutputPreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_markdown</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_code_cell</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_output</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_raw</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_input_prompt</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TagRemovePreprocessor</span><span class="o">.</span><span class="n">remove_cell_tags</span><span class="o">=</span><span class="s1">&#39;[&quot;remove_cell&quot;]&#39;</span>\
+<span class="o">--</span><span class="n">output</span> <span class="n">Teste</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[NbConvertApp] Converting notebook jupyter.ipynb to markdown
+[NbConvertApp] Writing 1710 bytes to Teste.md
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13393,7 +13462,54 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;nbstripout --install --attributes .gitattributes&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nbstripout --install --attributes .gitattributes
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/git/update_github.py&#39;
@@ -13406,7 +13522,7 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">git_full</span><span class="p">(</span><span class="s1">&#39;/home/michel/Geodata/SourceCode/package_jupyter&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;Atualizando&#39;</span><span class="p">)</span>
@@ -13427,8 +13543,8 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>b&#39;&#39; b&#39;&#39;
-b&#39;[master cb45215] Atualizando\n 6 files changed, 100 insertions(+), 127 deletions(-)\n rename jupyter.html =&gt; docs/jupyter.html (99%)\n rename jupyter.md =&gt; docs/jupyter.md (81%)\n create mode 100644 docs/jupyter.pdf\n rename jupyter.py =&gt; docs/jupyter.py (88%)\n delete mode 100644 jupyter.pdf\n&#39; b&#39;&#39;
-b&#39;&#39; b&#39;To github.com:michelmetran/package_jupyter.git\n   3b09637..cb45215  master -&gt; master\n&#39;
+b&#39;[master cbc3f02] Atualizando\n 7 files changed, 389 insertions(+), 319 deletions(-)\n create mode 100644 Teste.ipynb\n create mode 100644 Teste.pdf\n rewrite docs/jupyter.pdf (94%)\n&#39; b&#39;&#39;
+b&#39;&#39; b&#39;To github.com:michelmetran/package_jupyter.git\n   cb45215..cbc3f02  master -&gt; master\n&#39;
 Done!!
 </pre>
 </div>
@@ -13441,31 +13557,32 @@ Done!!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Outros">Outros<a class="anchor-link" href="#Outros">&#182;</a></h1>
+<h1 id="Outros">Outros<a class="anchor-link" href="#Outros">&#182;</a></h1><p>A partir do post <a href="http://mateos.io/blog/jupyter-notebook-in-git">How to Git Jupyter Notebooks the Right Way</a>, compreendi que é a partir da instalaçao do package <em>nbstripout</em> que é possível fazer o git de arquivos <em>ipynb</em>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Requirements">Requirements<a class="anchor-link" href="#Requirements">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>O comando <code>pip freeze</code> é o mais difundido na internet para se obter os <em>requirements.txt</em>, ou seja, o arquivo com o qual é possível indicar quais os <em>packages</em> necessários para rodar um determinado <em>script</em>.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;jupyter-nbconvert --to python jupyter.ipynb --stdout --TemplateExporter.exclude_input_prompt=True&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;nbstripout --install --attributes .gitattributes&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">freeze</span> <span class="o">&gt;</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 
     </div>
@@ -13478,13 +13595,108 @@ Done!!
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tentei usar também o <code>pipreqs</code>, porém ele não funciona em Juptyter Notebook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pipreqs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>eee</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">export</span> <span class="o">&gt;</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="n">py</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="s1">&#39;docs&#39;</span><span class="p">)</span>
+<span class="n">py</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0</pre>
+<pre>&#39;/media/Geodata/SourceCode/package_jupyter/docs&#39;</pre>
 </div>
 
 </div>
@@ -13496,11 +13708,38 @@ Done!!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Refer&#234;cias">Refer&#234;cias<a class="anchor-link" href="#Refer&#234;cias">&#182;</a></h1><p>A partir do post <a title="Link do Folium" href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231" target="_blank">**_Jupyter Notebook Extensions_**</a>.</p>
-<p>A partir do post <a title="Link do Folium" href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/" target="_blank">**_28 Jupyter Notebook Tips, Tricks, and Shortcuts_**</a>,</p>
+<h1 id="Erros">Erros<a class="anchor-link" href="#Erros">&#182;</a></h1><p>Em uma tentativa de exportar para pdf, tive problemas. Não exportava.</p>
+<p>Descobri que é necessário ter o
+'''sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended'''
+ou
+'''sudo apt-get install texlive-full'''</p>
+<p><em>nbconvert failed: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at <a href="https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex">https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex</a>.</em></p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Refer&#234;cias">Refer&#234;cias<a class="anchor-link" href="#Refer&#234;cias">&#182;</a></h1><p>A partir do post <a title="Link do Folium" href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231" target="_blank">**_Jupyter Notebook Extensions_**</a>.</p>
+<p>A partir do post <a title="Link do Folium" href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/" target="_blank">**_28 Jupyter Notebook Tips, Tricks, and Shortcuts_**</a>,</p>
+<p>A partir do post <a href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231">Link do Folium</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
