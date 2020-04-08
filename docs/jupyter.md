@@ -20,7 +20,12 @@ https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-ju
 
 ```python
 %run '../codes/files/create_folders.py'
+
+create_folders('', folders=['docs'])
 ```
+
+    Directory "docs" created!
+
 
 
 ```javascript
@@ -71,30 +76,8 @@ def get_jupyternotebook_name():
 
 
 ```python
-get_jupyternotebook_name()
+#get_jupyternotebook_name()
 ```
-
-
-    <IPython.core.display.Javascript object>
-
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-5-0fd729895b36> in <module>
-    ----> 1 get_jupyternotebook_name()
-    
-
-    <ipython-input-4-440559a4d7cf> in get_jupyternotebook_name()
-         14 
-         15     # Result
-    ---> 16     return theNotebook
-    
-
-    NameError: name 'theNotebook' is not defined
-
 
 
 ```javascript
@@ -128,7 +111,7 @@ ipynb_pathname
 ```python
 %run '../codes/files/export_jupyter.py'
 
-export_jupyter(ipynb_filename, '', ['html', 'markdown', 'pdf', 'python'], False)
+export_jupyter(ipynb_filename, 'docs', ['html', 'markdown', 'pdf', 'python'], False)
 ```
 
     Arquivo jupyter.ipynb exportado corretamente para o formato html sem usar prefixo da data.
@@ -154,17 +137,12 @@ git_full('/home/michel/Geodata/SourceCode/package_jupyter', '.', 'Atualizando')
 ```
 
     b'' b''
-    b'[master 3b09637] Atualizando\n 1 file changed, 370 deletions(-)\n delete mode 100644 .ipynb_checkpoints/jupyter-checkpoint.ipynb\n' b''
-    b'' b'To github.com:michelmetran/package_jupyter.git\n   19645a5..3b09637  master -> master\n'
+    b'[master cb45215] Atualizando\n 6 files changed, 100 insertions(+), 127 deletions(-)\n rename jupyter.html => docs/jupyter.html (99%)\n rename jupyter.md => docs/jupyter.md (81%)\n create mode 100644 docs/jupyter.pdf\n rename jupyter.py => docs/jupyter.py (88%)\n delete mode 100644 jupyter.pdf\n' b''
+    b'' b'To github.com:michelmetran/package_jupyter.git\n   3b09637..cb45215  master -> master\n'
     Done!!
 
 
 # Outros
-
-
-```python
-
-```
 
 
 ```python
@@ -179,11 +157,11 @@ os.system('nbstripout --install --attributes .gitattributes')
 ```
 
 
-```python
-!git add --all
-!git commit -m "Initial commit"
-!git push -u origin master
-```
+
+
+    0
+
+
 
 # Referêcias
 A partir do post <a title="Link do Folium" href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231" target="_blank">**_Jupyter Notebook Extensions_**</a>.

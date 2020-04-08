@@ -13074,7 +13074,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_remove_cell"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Introdu&#231;&#227;o">Introdu&#231;&#227;o<a class="anchor-link" href="#Introdu&#231;&#227;o">&#182;</a></h1><p>A partir do post <a title="Link do Folium" href="http://mateos.io/blog/jupyter-notebook-in-git/" target="_blank">**_How to Git Jupyter Notebooks the Right Way_**</a>, compreendi que é a partir da instalaçao do package <em>nbstripout</em> que é possível fazer o git de arquivos <em>ipynb</em>.</p>
@@ -13088,7 +13088,7 @@ sudo apt-get install texlive-full</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered celltag_remove_cell"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Get-Jupyter-Notebook-filename">Get <em>Jupyter Notebook</em> filename<a class="anchor-link" href="#Get-Jupyter-Notebook-filename">&#182;</a></h1><p><a href="https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name">https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name</a></p>
@@ -13096,20 +13096,40 @@ sudo apt-get install texlive-full</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_remove_cell">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/files/create_folders.py&#39;
+
+<span class="n">create_folders</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">folders</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;docs&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Directory &#34;docs&#34; created!
+</pre>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_remove_cell">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
@@ -13138,10 +13158,10 @@ sudo apt-get install texlive-full</p>
 
 
 
-<div id="2bb16822-e2c8-4f65-8c10-5e00826959d1"></div>
+<div id="46a5633c-d5f7-4698-a8b8-cfcfc1b05a97"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2bb16822-e2c8-4f65-8c10-5e00826959d1');
+var element = $('#46a5633c-d5f7-4698-a8b8-cfcfc1b05a97');
 
 var kernel = IPython.notebook.kernel;
 var body = document.body, attribs = body.attributes;
@@ -13157,7 +13177,7 @@ kernel.execute(command);
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+<div class="cell border-box-sizing code_cell rendered celltag_remove_cell">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
@@ -13220,59 +13240,13 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_jupyternotebook_name</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#get_jupyternotebook_name()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
-<div id="878106ce-3309-4661-9a43-2d8e3e028fca"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#878106ce-3309-4661-9a43-2d8e3e028fca');
-IPython.notebook.kernel.execute("theNotebook = " +     "'"+IPython.notebook.notebook_name+"'");
-</script>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-0fd729895b36&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_jupyternotebook_name<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-4-440559a4d7cf&gt;</span> in <span class="ansi-cyan-fg">get_jupyternotebook_name</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
-<span class="ansi-green-intense-fg ansi-bold">     15</span>     <span class="ansi-red-fg"># Result</span>
-<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> theNotebook
-
-<span class="ansi-red-fg">NameError</span>: name &#39;theNotebook&#39; is not defined</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13306,10 +13280,10 @@ IPython.notebook.kernel.execute("theNotebook = " +     "'"+IPython.notebook.note
 
 
 
-<div id="415a3254-2ce3-47d6-a28e-b2e0ae0db703"></div>
+<div id="9570ee9e-fe75-4a29-a01a-610f5ac83c45"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#415a3254-2ce3-47d6-a28e-b2e0ae0db703');
+var element = $('#9570ee9e-fe75-4a29-a01a-610f5ac83c45');
 
 var kernel = IPython.notebook.kernel;
 var nb = IPython.notebook;
@@ -13367,12 +13341,12 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/files/export_jupyter.py&#39;
 
-<span class="n">export_jupyter</span><span class="p">(</span><span class="n">ipynb_filename</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">export_jupyter</span><span class="p">(</span><span class="n">ipynb_filename</span><span class="p">,</span> <span class="s1">&#39;docs&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13419,7 +13393,7 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/git/update_github.py&#39;
@@ -13432,7 +13406,7 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">git_full</span><span class="p">(</span><span class="s1">&#39;/home/michel/Geodata/SourceCode/package_jupyter&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;Atualizando&#39;</span><span class="p">)</span>
@@ -13453,8 +13427,8 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>b&#39;&#39; b&#39;&#39;
-b&#39;[master 3b09637] Atualizando\n 1 file changed, 370 deletions(-)\n delete mode 100644 .ipynb_checkpoints/jupyter-checkpoint.ipynb\n&#39; b&#39;&#39;
-b&#39;&#39; b&#39;To github.com:michelmetran/package_jupyter.git\n   19645a5..3b09637  master -&gt; master\n&#39;
+b&#39;[master cb45215] Atualizando\n 6 files changed, 100 insertions(+), 127 deletions(-)\n rename jupyter.html =&gt; docs/jupyter.html (99%)\n rename jupyter.md =&gt; docs/jupyter.md (81%)\n create mode 100644 docs/jupyter.pdf\n rename jupyter.py =&gt; docs/jupyter.py (88%)\n delete mode 100644 jupyter.pdf\n&#39; b&#39;&#39;
+b&#39;&#39; b&#39;To github.com:michelmetran/package_jupyter.git\n   3b09637..cb45215  master -&gt; master\n&#39;
 Done!!
 </pre>
 </div>
@@ -13476,19 +13450,6 @@ Done!!
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;jupyter-nbconvert --to python jupyter.ipynb --stdout --TemplateExporter.exclude_input_prompt=True&#39;</span><span class="p">)</span>
 </pre></div>
@@ -13500,7 +13461,7 @@ Done!!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -13511,18 +13472,23 @@ Done!!
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add --all
-<span class="o">!</span>git commit -m <span class="s2">&quot;Initial commit&quot;</span>
-<span class="o">!</span>git push -u origin master
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 

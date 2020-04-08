@@ -60,10 +60,10 @@ def get_jupyternotebook_name():
     return theNotebook
 
 
-# In[5]:
+# In[22]:
 
 
-get_jupyternotebook_name()
+#get_jupyternotebook_name()
 
 
 # In[6]:
@@ -80,7 +80,7 @@ ipynb_pathname
 
 # # Export
 
-# In[ ]:
+# In[18]:
 
 
 get_ipython().run_line_magic('run', "'../codes/files/export_jupyter.py'")
@@ -94,13 +94,13 @@ export_jupyter(ipynb_filename, 'docs', ['html', 'markdown', 'pdf', 'python'], Fa
 
 # # GitHub
 
-# In[10]:
+# In[19]:
 
 
 get_ipython().run_line_magic('run', "'../codes/git/update_github.py'")
 
 
-# In[14]:
+# In[20]:
 
 
 git_full('/home/michel/Geodata/SourceCode/package_jupyter', '.', 'Atualizando')
@@ -111,29 +111,15 @@ git_full('/home/michel/Geodata/SourceCode/package_jupyter', '.', 'Atualizando')
 # In[ ]:
 
 
-
-
-
-# In[ ]:
-
-
 import os
 os.system('jupyter-nbconvert --to python jupyter.ipynb --stdout --TemplateExporter.exclude_input_prompt=True')
 
 
-# In[ ]:
+# In[21]:
 
 
 import os
 os.system('nbstripout --install --attributes .gitattributes')
-
-
-# In[ ]:
-
-
-get_ipython().system('git add --all')
-get_ipython().system('git commit -m "Initial commit"')
-get_ipython().system('git push -u origin master')
 
 
 # # Referêcias
