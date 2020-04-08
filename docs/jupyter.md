@@ -1,5 +1,5 @@
 <h1>Sumário<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Export" data-toc-modified-id="Export-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Export</a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Outros" data-toc-modified-id="Outros-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Outros</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Requirements</a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Export" data-toc-modified-id="Export-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Export</a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Requirements</a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
 
 # Introdução
 
@@ -10,12 +10,11 @@ O *Jupyter Notebook* é a maneira que optei para escrever os códigos na linguag
 
 É no procesos de exportação dos arquivos que eu me ative nessa publicação, pois um dos objetivos de longo prazo que busco é exportar relatórios padronizados, para distribuição geral e irrestrita, ou seja, quero algo que não seja inteligível apenas por pessoas que conhecem de programação.
 
-Para isso foram aqui apresentados um diversidade de opções para exportação de um arquivo *.ipynb*, sendo possível incluir com campos determinados, tais como:
-- Apenas as células que tenham determinada *tag*;
-- Apenas as células de *markdown*;
-- Excluindo as células de *outputs*.
-
-
+Para isso foram aqui apresentados um diversidade de opções para exportação de um arquivo *.ipynb*, sendo possível:
+- Incluir apenas campos determinados;
+- Incluir apenas as células que tenham determinada *tag*;
+- Incluir apenas as células de *markdown*;
+- Excluir as células de *outputs*.
 
 
 ```python
@@ -136,7 +135,7 @@ export_jupyter(ipynb_filename, 'docs', ['html', 'markdown', 'pdf', 'python'], Fa
 ```
 
     [NbConvertApp] Converting notebook jupyter.ipynb to markdown
-    [NbConvertApp] Writing 1710 bytes to Teste.md
+    [NbConvertApp] Writing 2932 bytes to Teste.md
 
 
 Quero saber como exportar somente algumas células.
@@ -144,6 +143,8 @@ Quero saber como exportar somente algumas células.
 
 
 # GitHub
+
+A partir do post [How to Git Jupyter Notebooks the Right Way](http://mateos.io/blog/jupyter-notebook-in-git), compreendi que é considerada como *best pratices* no git de projetos escritos em *Jupyter Notebook* a aplicação de um determinado código usando o package *nbstripout*, conforme segue. No vídeo [nbstripout: strip output from Jupyter and IPython notebooks](https://www.youtube.com/watch?v=BEMP4xacrVc) é explicado detalhadamente como o comando atua.
 
 
 ```python
@@ -160,28 +161,37 @@ os.system('nbstripout --install --attributes .gitattributes')
 
 
 ```python
+import nbstripout
+nbstripout
 !nbstripout --install --attributes .gitattributes
 ```
 
 
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-73-e92e158dc300> in <module>
+          1 import nbstripout
+    ----> 2 nbstripout --help
+          3 get_ipython().system('nbstripout --install --attributes .gitattributes')
+
+
+    TypeError: bad operand type for unary -: '_Helper'
+
+
+Criei uma 
+
+
 ```python
 %run '../codes/git/update_github.py'
-```
-
-
-```python
 git_full('/home/michel/Geodata/SourceCode/package_jupyter', '.', 'Atualizando')
 ```
 
     b'' b''
-    b'[master cbc3f02] Atualizando\n 7 files changed, 389 insertions(+), 319 deletions(-)\n create mode 100644 Teste.ipynb\n create mode 100644 Teste.pdf\n rewrite docs/jupyter.pdf (94%)\n' b''
-    b'' b'To github.com:michelmetran/package_jupyter.git\n   cb45215..cbc3f02  master -> master\n'
+    b'[master ec7ec9a] Atualizando\n 10 files changed, 1128 insertions(+), 347 deletions(-)\n delete mode 100644 Teste.ipynb\n create mode 100644 Teste.md\n delete mode 100644 Teste.pdf\n rewrite docs/jupyter.pdf (95%)\n create mode 100644 environment.yml\n create mode 100644 requirements.txt\n' b''
+    b'' b'To github.com:michelmetran/package_jupyter.git\n   cbc3f02..ec7ec9a  master -> master\n'
     Done!!
-
-
-# Outros
-
-A partir do post [How to Git Jupyter Notebooks the Right Way](http://mateos.io/blog/jupyter-notebook-in-git), compreendi que é a partir da instalaçao do package _nbstripout_ que é possível fazer o git de arquivos _ipynb_.
 
 
 # Requirements
@@ -196,60 +206,26 @@ pip freeze > requirements.txt
     Note: you may need to restart the kernel to use updated packages.
 
 
-Tentei usar também o ```pipreqs```, porém ele não funciona em Juptyter Notebook.
-
-
-```python
-import pipreqs
-```
-
-eee
-
-
-```python
-conda env export > environment.yml
-```
-
-    
-    Note: you may need to restart the kernel to use updated packages.
-
-
-
-```python
-import os
-cwd = os.getcwd()
-py = os.path.join(cwd, 'docs')
-py
-```
-
-
-
-
-    '/media/Geodata/SourceCode/package_jupyter/docs'
-
-
+Tentei usar também o package ```pipreqs```, porém ele não funciona em *Juptyter Notebook*. Descobri ainda que o comando ``` conda env export > environment.yml``` pode auxiliar na criação destes parâmetros.
 
 # Erros
 
-Em uma tentativa de exportar para pdf, tive problemas. Não exportava.
+Em uma tentativa de exportar o *Jupyter Notebook* para PDF tive problemas. O arquivo não era exportado e apresentava a seguinte mensagem de erro:
+- *nbconvert failed: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex.*
 
-Descobri que é necessário ter o
-'''sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended'''
-ou
-'''sudo apt-get install texlive-full'''
+Para solucionar, descobri que é necessário instalar, no Linux, akguns pacotes de aplicativos com os seguintes comandos:
 
-_nbconvert failed: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex._
+```sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended```     # Versão Compacta
+
+```sudo apt-get install texlive-full```      # Versão Completa
 
 # Referêcias
 
-A partir do post <a title="Link do Folium" href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231" target="_blank">**_Jupyter Notebook Extensions_**</a>.
 
-A partir do post <a title="Link do Folium" href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/" target="_blank">**_28 Jupyter Notebook Tips, Tricks, and Shortcuts_**</a>, 
+[**Jupyter Notebook Extensions**](https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231)
+
+
+A partir do post [**28 Jupyter Notebook Tips, Tricks, and Shortcuts**](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts)
 
 
 A partir do post [Link do Folium](https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231)
-
-
-```python
-
-```
