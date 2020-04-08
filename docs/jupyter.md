@@ -22,9 +22,6 @@ https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-ju
 %run '../codes/files/create_folders.py'
 ```
 
-    ERROR:root:File `'../codes/files/create_folders.py'` not found.
-
-
 
 ```javascript
 %%javascript
@@ -82,10 +79,21 @@ get_jupyternotebook_name()
 
 
 
+    ---------------------------------------------------------------------------
 
+    NameError                                 Traceback (most recent call last)
 
-    'jupyter.ipynb'
+    <ipython-input-5-0fd729895b36> in <module>
+    ----> 1 get_jupyternotebook_name()
+    
 
+    <ipython-input-4-440559a4d7cf> in get_jupyternotebook_name()
+         14 
+         15     # Result
+    ---> 16     return theNotebook
+    
+
+    NameError: name 'theNotebook' is not defined
 
 
 
@@ -118,13 +126,10 @@ ipynb_pathname
 
 
 ```python
-%run './codes/files/export_jupyter.py'
+%run '../codes/files/export_jupyter.py'
 
 export_jupyter(ipynb_filename, '', ['html', 'markdown', 'pdf', 'python'], False)
 ```
-
-    ERROR:root:File `'./codes/files/export_jupyter.py'` not found.
-
 
     Arquivo jupyter.ipynb exportado corretamente para o formato html sem usar prefixo da data.
     Arquivo jupyter.ipynb exportado corretamente para o formato markdown sem usar prefixo da data.
@@ -143,19 +148,16 @@ Quero saber como exportar somente algumas células.
 %run '../codes/git/update_github.py'
 ```
 
-    ERROR:root:File `'../codes/git/update_github.py'` not found.
-
-
 
 ```python
-git_full('/home/michel/Documents/SourceCode/package_pandas', '.', 'Atualizando')
-git_full('/home/michel/Documents/SourceCode/michelmetran.github.io', '.', 'Atual
+git_full('/home/michel/Geodata/SourceCode/package_jupyter', '.', 'Atualizando')
 ```
 
+    b'' b''
+    b'[master 3b09637] Atualizando\n 1 file changed, 370 deletions(-)\n delete mode 100644 .ipynb_checkpoints/jupyter-checkpoint.ipynb\n' b''
+    b'' b'To github.com:michelmetran/package_jupyter.git\n   19645a5..3b09637  master -> master\n'
+    Done!!
 
-```python
-
-```
 
 # Outros
 

@@ -13098,7 +13098,7 @@ sudo apt-get install texlive-full</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/files/create_folders.py&#39;
@@ -13108,28 +13108,10 @@ sudo apt-get install texlive-full</p>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>ERROR:root:File `&#39;../codes/files/create_folders.py&#39;` not found.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
@@ -13156,10 +13138,10 @@ sudo apt-get install texlive-full</p>
 
 
 
-<div id="37d25438-2b8a-4437-bdc2-3448ae987b52"></div>
+<div id="2bb16822-e2c8-4f65-8c10-5e00826959d1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#37d25438-2b8a-4437-bdc2-3448ae987b52');
+var element = $('#2bb16822-e2c8-4f65-8c10-5e00826959d1');
 
 var kernel = IPython.notebook.kernel;
 var body = document.body, attribs = body.attributes;
@@ -13177,7 +13159,7 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ipynb_filename</span>
@@ -13193,7 +13175,7 @@ kernel.execute(command);
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13210,7 +13192,7 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %load &#39;../codes/files/get_jupyternotebook_name.py&#39;</span>
@@ -13238,7 +13220,7 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_jupyternotebook_name</span><span class="p">()</span>
@@ -13260,10 +13242,10 @@ kernel.execute(command);
 
 
 
-<div id="f6f3ac2a-c66d-4d11-8caf-9835b4a1b181"></div>
+<div id="878106ce-3309-4661-9a43-2d8e3e028fca"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f6f3ac2a-c66d-4d11-8caf-9835b4a1b181');
+var element = $('#878106ce-3309-4661-9a43-2d8e3e028fca');
 IPython.notebook.kernel.execute("theNotebook = " +     "'"+IPython.notebook.notebook_name+"'");
 </script>
 </div>
@@ -13272,15 +13254,23 @@ IPython.notebook.kernel.execute("theNotebook = " +     "'"+IPython.notebook.note
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-0fd729895b36&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>get_jupyternotebook_name<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
+<span class="ansi-green-fg">&lt;ipython-input-4-440559a4d7cf&gt;</span> in <span class="ansi-cyan-fg">get_jupyternotebook_name</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> 
+<span class="ansi-green-intense-fg ansi-bold">     15</span>     <span class="ansi-red-fg"># Result</span>
+<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> theNotebook
 
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;jupyter.ipynb&#39;</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;theNotebook&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -13289,7 +13279,7 @@ IPython.notebook.kernel.execute("theNotebook = " +     "'"+IPython.notebook.note
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
@@ -13316,10 +13306,10 @@ IPython.notebook.kernel.execute("theNotebook = " +     "'"+IPython.notebook.note
 
 
 
-<div id="16f97350-4c1c-48e2-bfc5-8ee96927307d"></div>
+<div id="415a3254-2ce3-47d6-a28e-b2e0ae0db703"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#16f97350-4c1c-48e2-bfc5-8ee96927307d');
+var element = $('#415a3254-2ce3-47d6-a28e-b2e0ae0db703');
 
 var kernel = IPython.notebook.kernel;
 var nb = IPython.notebook;
@@ -13337,7 +13327,7 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ipynb_pathname</span>
@@ -13353,7 +13343,7 @@ kernel.execute(command);
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13377,10 +13367,10 @@ kernel.execute(command);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;./codes/files/export_jupyter.py&#39;
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/files/export_jupyter.py&#39;
 
 <span class="n">export_jupyter</span><span class="p">(</span><span class="n">ipynb_filename</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -13392,17 +13382,6 @@ kernel.execute(command);
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>ERROR:root:File `&#39;./codes/files/export_jupyter.py&#39;` not found.
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -13440,10 +13419,23 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;../codes/git/update_github.py&#39;
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">git_full</span><span class="p">(</span><span class="s1">&#39;/home/michel/Geodata/SourceCode/package_jupyter&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;Atualizando&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13459,39 +13451,15 @@ Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar pref
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>ERROR:root:File `&#39;../codes/git/update_github.py&#39;` not found.
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>b&#39;&#39; b&#39;&#39;
+b&#39;[master 3b09637] Atualizando\n 1 file changed, 370 deletions(-)\n delete mode 100644 .ipynb_checkpoints/jupyter-checkpoint.ipynb\n&#39; b&#39;&#39;
+b&#39;&#39; b&#39;To github.com:michelmetran/package_jupyter.git\n   19645a5..3b09637  master -&gt; master\n&#39;
+Done!!
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">git_full</span><span class="p">(</span><span class="s1">&#39;/home/michel/Documents/SourceCode/package_pandas&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;Atualizando&#39;</span><span class="p">)</span>
-<span class="n">git_full</span><span class="p">(</span><span class="s1">&#39;/home/michel/Documents/SourceCode/michelmetran.github.io&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;Atual</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 

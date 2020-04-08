@@ -20,25 +20,27 @@
 # 
 # https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name
 
-# In[33]:
+# In[17]:
 
 
 get_ipython().run_line_magic('run', "'../codes/files/create_folders.py'")
 
+create_folders('', folders=['docs'])
 
-# In[25]:
+
+# In[2]:
 
 
 get_ipython().run_cell_magic('javascript', '', '\nvar kernel = IPython.notebook.kernel;\nvar body = document.body, attribs = body.attributes;\nvar command = \'ipynb_filename = \' + \'"\'+attribs[\'data-notebook-name\'].value+\'"\';\nkernel.execute(command);')
 
 
-# In[26]:
+# In[3]:
 
 
 ipynb_filename
 
 
-# In[27]:
+# In[4]:
 
 
 # %load '../codes/files/get_jupyternotebook_name.py'
@@ -58,19 +60,19 @@ def get_jupyternotebook_name():
     return theNotebook
 
 
-# In[28]:
+# In[5]:
 
 
 get_jupyternotebook_name()
 
 
-# In[29]:
+# In[6]:
 
 
 get_ipython().run_cell_magic('javascript', '', '\nvar kernel = IPython.notebook.kernel;\nvar nb = IPython.notebook;\nvar command = \'ipynb_pathname = "\' + nb.base_url + nb.notebook_path + \'"\';\nkernel.execute(command);')
 
 
-# In[30]:
+# In[7]:
 
 
 ipynb_pathname
@@ -78,12 +80,12 @@ ipynb_pathname
 
 # # Export
 
-# In[32]:
+# In[ ]:
 
 
-get_ipython().run_line_magic('run', "'./codes/files/export_jupyter.py'")
+get_ipython().run_line_magic('run', "'../codes/files/export_jupyter.py'")
 
-export_jupyter(ipynb_filename, '', ['html', 'markdown', 'pdf', 'python'], False)
+export_jupyter(ipynb_filename, 'docs', ['html', 'markdown', 'pdf', 'python'], False)
 
 
 # Quero saber como exportar somente algumas células.
@@ -92,23 +94,16 @@ export_jupyter(ipynb_filename, '', ['html', 'markdown', 'pdf', 'python'], False)
 
 # # GitHub
 
-# In[23]:
+# In[10]:
 
 
 get_ipython().run_line_magic('run', "'../codes/git/update_github.py'")
 
 
-# In[ ]:
+# In[14]:
 
 
-git_full('/home/michel/Documents/SourceCode/package_pandas', '.', 'Atualizando')
-git_full('/home/michel/Documents/SourceCode/michelmetran.github.io', '.', 'Atual
-
-
-# In[ ]:
-
-
-
+git_full('/home/michel/Geodata/SourceCode/package_jupyter', '.', 'Atualizando')
 
 
 # # Outros
