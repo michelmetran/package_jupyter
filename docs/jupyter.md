@@ -1,5 +1,5 @@
 <h1>Sumário<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Export" data-toc-modified-id="Export-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Export</a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Requirements</a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Funções" data-toc-modified-id="Funções-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Funções</a></span><ul class="toc-item"><li><span><a href="#Variáveis-em-Markdowns" data-toc-modified-id="Variáveis-em-Markdowns-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Variáveis em <em>Markdowns</em></a></span></li><li><span><a href="#Comandos-do-Sistema" data-toc-modified-id="Comandos-do-Sistema-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Comandos do Sistema</a></span></li></ul></li><li><span><a href="#Export" data-toc-modified-id="Export-4"><span class="toc-item-num">4&nbsp;&nbsp;</span><em>Export</em></a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-6"><span class="toc-item-num">6&nbsp;&nbsp;</span><em>Requirements</em></a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
 
 # Introdução
 
@@ -16,195 +16,38 @@ Para isso foram aqui apresentados um diversidade de opções para exportação d
 - Incluir apenas as células de *markdown*;
 - Excluir as células de *outputs*.
 
-
-```python
-%run '../codes/files/create_folders.py'
-
-create_folders('', folders=['docs'])
-```
-
-    Directory "docs" already exists...
-
-
 # Get *Jupyter Notebook* filename
 
 https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name
 
+# Funções
 
-```javascript
-%%javascript
+## Variáveis em *Markdowns*
+Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que **a=10**.
 
-var kernel = IPython.notebook.kernel;
-var body = document.body, attribs = body.attributes;
-var command = 'ipynb_filename = ' + '"'+attribs['data-notebook-name'].value+'"';
-kernel.execute(command);
-```
+## Comandos do Sistema
 
+Praticamente  qualquer  comando  do  sistema  pode  ser  acessado  usando previamente **!**,  o  qual  passa qualquer comando subsequente diretamente para o sistema operacional. Você pode até usar variáveis python em comandos enviados para o sistema operacional!
 
-    <IPython.core.display.Javascript object>
+# *Export*
 
+Os arquivos Jupyter Notebook podem ser exportados em diversos formatos, seja através do menu de opções, ou através dos comandos. Ao exportar, é possível definir diversas opções que limitam o que será exportado, podendo escolher determinados tipos de células ou, até mesmo, células invidivuais. 
 
+No *post* [Jupyter Notebook nbconvert without Magic Commands/ w/o Markdown](https://stackoverflow.com/questions/57701538/jupyter-notebook-nbconvert-without-magic-commands-w-o-markdown) é apresentado algumas opções de exportação. Incorporei várias delas no script *../codes/files/export_jupyter.py*. Ainda existem outras opções que não estudei a finalidade, listadas a seguir:
 
-```python
-ipynb_filename
-```
-
-
-
-
-    'jupyter.ipynb'
-
-
-
-
-```python
-#%run '../codes/files/get_jupyternotebook_name.py'
-```
-
-
-```python
-#get_jupyternotebook_name()
-```
-
-
-```javascript
-%%javascript
-
-var kernel = IPython.notebook.kernel;
-var nb = IPython.notebook;
-var command = 'ipynb_pathname = "' + nb.base_url + nb.notebook_path + '"';
-kernel.execute(command);
-```
-
-
-    <IPython.core.display.Javascript object>
-
-
-
-```python
-ipynb_pathname
-```
-
-
-
-
-    '/package_jupyter/jupyter.ipynb'
-
-
-
-# Export
-
-
-```python
-%run '../codes/files/export_jupyter.py'
-
-export_jupyter(ipynb_filename, 'docs', ['html', 'markdown', 'pdf', 'python'], False)
-```
-
-    Arquivo jupyter.ipynb exportado corretamente para o formato html sem usar prefixo da data.
-    Arquivo jupyter.ipynb exportado corretamente para o formato markdown sem usar prefixo da data.
-    Arquivo jupyter.ipynb exportado corretamente para o formato pdf sem usar prefixo da data.
-    Arquivo jupyter.ipynb exportado corretamente para o formato python sem usar prefixo da data.
-
-
-
-```python
-#import os
-#os.system('jupyter-nbconvert --to python jupyter.ipynb')
-```
-
-
-```python
-#--stdout
-#--TemplateExporter.exclude_input_prompt=True'
-```
-
-
-```python
-!jupyter-nbconvert jupyter.ipynb\
---to markdown\
---TagRemovePreprocessor.enabled=True\
---ClearOutputPreprocessor.enabled=True\
---TemplateExporter.exclude_markdown=False\
---TemplateExporter.exclude_code_cell=True\
---TemplateExporter.exclude_output=True\
---TemplateExporter.exclude_raw=False\
---TemplateExporter.exclude_input_prompt=True\
---TagRemovePreprocessor.remove_cell_tags='["remove_cell"]'\
---output Teste
-```
-
-    [NbConvertApp] Converting notebook jupyter.ipynb to markdown
-    [NbConvertApp] Writing 2932 bytes to Teste.md
-
-
-Quero saber como exportar somente algumas células.
-'https://stackoverflow.com/questions/57701538/jupyter-notebook-nbconvert-without-magic-commands-w-o-markdown
-
+1. *--stdout*
+2. *--TemplateExporter.exclude_input_prompt=True*
+3. *--TagRemovePreprocessor.remove_input_tags = {"hide"}*
 
 # GitHub
 
-A partir do post [How to Git Jupyter Notebooks the Right Way](http://mateos.io/blog/jupyter-notebook-in-git), compreendi que é considerada como *best pratices* no git de projetos escritos em *Jupyter Notebook* a aplicação de um determinado código usando o package *nbstripout*, conforme segue. No vídeo [nbstripout: strip output from Jupyter and IPython notebooks](https://www.youtube.com/watch?v=BEMP4xacrVc) é explicado detalhadamente como o comando atua.
+A partir do *post* [**How to Git Jupyter Notebooks the Right Way**](http://mateos.io/blog/jupyter-notebook-in-git), compreendi que é considerada como *best pratices* no git de projetos escritos em *Jupyter Notebook* a aplicação de um determinado código usando o package *nbstripout*, conforme apresentado abaixo. No vídeo [**nbstripout: strip output from Jupyter and IPython notebooks**](https://www.youtube.com/watch?v=BEMP4xacrVc) é explicado detalhadamente como o comando atua.
 
+Criei uma função para exportar o *Jupyter Notebook* em diversos formatos. Acredito que seja possível incorporar o código do ```nbstripout``` na função que faz o *commit*, visando simplificar as coisas.
 
-```python
-import os
-os.system('nbstripout --install --attributes .gitattributes')
-```
-
-
-
-
-    0
-
-
-
-
-```python
-import nbstripout
-nbstripout
-!nbstripout --install --attributes .gitattributes
-```
-
-
-    ---------------------------------------------------------------------------
-
-    TypeError                                 Traceback (most recent call last)
-
-    <ipython-input-73-e92e158dc300> in <module>
-          1 import nbstripout
-    ----> 2 nbstripout --help
-          3 get_ipython().system('nbstripout --install --attributes .gitattributes')
-
-
-    TypeError: bad operand type for unary -: '_Helper'
-
-
-Criei uma 
-
-
-```python
-%run '../codes/git/update_github.py'
-git_full('/home/michel/Geodata/SourceCode/package_jupyter', '.', 'Atualizando')
-```
-
-    b'' b''
-    b'[master ec7ec9a] Atualizando\n 10 files changed, 1128 insertions(+), 347 deletions(-)\n delete mode 100644 Teste.ipynb\n create mode 100644 Teste.md\n delete mode 100644 Teste.pdf\n rewrite docs/jupyter.pdf (95%)\n create mode 100644 environment.yml\n create mode 100644 requirements.txt\n' b''
-    b'' b'To github.com:michelmetran/package_jupyter.git\n   cbc3f02..ec7ec9a  master -> master\n'
-    Done!!
-
-
-# Requirements
+# *Requirements*
 
 O comando ```pip freeze``` é o mais difundido na internet para se obter os *requirements.txt*, ou seja, o arquivo com o qual é possível indicar quais os *packages* necessários para rodar um determinado *script*.
-
-
-```python
-pip freeze > requirements.txt
-```
-
-    Note: you may need to restart the kernel to use updated packages.
-
 
 Tentei usar também o package ```pipreqs```, porém ele não funciona em *Juptyter Notebook*. Descobri ainda que o comando ``` conda env export > environment.yml``` pode auxiliar na criação destes parâmetros.
 
@@ -221,11 +64,4 @@ Para solucionar, descobri que é necessário instalar, no Linux, akguns pacotes 
 
 # Referêcias
 
-
-[**Jupyter Notebook Extensions**](https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231)
-
-
-A partir do post [**28 Jupyter Notebook Tips, Tricks, and Shortcuts**](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts)
-
-
-A partir do post [Link do Folium](https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231)
+Há muita informação na internet sobre funcionalidades do *Jupyter Notebook*. Apenas para exemplificar, usei particialmente algumas das funções e truques apresentados em [**Jupyter Notebook Extensions**](https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231) e [**28 Jupyter Notebook Tips, Tricks, and Shortcuts**](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts).
