@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # <h1>Sumário<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Funções" data-toc-modified-id="Funções-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Funções</a></span><ul class="toc-item"><li><span><a href="#Variáveis-em-Markdowns" data-toc-modified-id="Variáveis-em-Markdowns-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Variáveis em <em>Markdowns</em></a></span></li><li><span><a href="#Comandos-do-Sistema" data-toc-modified-id="Comandos-do-Sistema-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Comandos do Sistema</a></span></li></ul></li><li><span><a href="#Export" data-toc-modified-id="Export-4"><span class="toc-item-num">4&nbsp;&nbsp;</span><em>Export</em></a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-6"><span class="toc-item-num">6&nbsp;&nbsp;</span><em>Requirements</em></a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Funções" data-toc-modified-id="Funções-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Funções</a></span><ul class="toc-item"><li><span><a href="#Variáveis-em-Markdowns" data-toc-modified-id="Variáveis-em-Markdowns-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Variáveis em <em>Markdowns</em></a></span></li><li><span><a href="#Linhas-de-Tabelas" data-toc-modified-id="Linhas-de-Tabelas-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Linhas de Tabelas</a></span></li><li><span><a href="#Comandos-do-Sistema" data-toc-modified-id="Comandos-do-Sistema-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Comandos do Sistema</a></span></li><li><span><a href="#HTML" data-toc-modified-id="HTML-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>HTML</a></span></li></ul></li><li><span><a href="#Export" data-toc-modified-id="Export-4"><span class="toc-item-num">4&nbsp;&nbsp;</span><em>Export</em></a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-6"><span class="toc-item-num">6&nbsp;&nbsp;</span><em>Requirements</em></a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
 
 # # Introdução
 # 
@@ -21,16 +21,25 @@
 
 # # Get *Jupyter Notebook* filename
 # 
-# https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name
+# Testei diversos comandos para obter o nome do *Jupyter Notebook* em uma variável. A melhor opçãoque encontrei estava nesse [*post*](https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name) que tem diversas outras opções.
 
 # # Funções
 
 # ## Variáveis em *Markdowns*
-# Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que **a=10**.
+# Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que **a={{a}}**.
+
+# O mesmo pode ser feito com tabelas. Em tentativa de inserir tabelas diretamente do Pandas não obtive sucesso... Depois temos dataframe modificado pelo *.to_html()*, [função](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html) que fornece várias opções a serem exploradas.
+# {{df_html}}
+
+# ## Linhas de Tabelas
+# 
+# Descobri que [nesse *post*](https://stackoverflow.com/questions/38783027/jupyter-notebook-display-two-pandas-tables-side-by-side) que é possível trabalhar para inserir também mais de uma tabela alinhada.
 
 # ## Comandos do Sistema
 # 
 # Praticamente  qualquer  comando  do  sistema  pode  ser  acessado  usando previamente **!**,  o  qual  passa qualquer comando subsequente diretamente para o sistema operacional. Você pode até usar variáveis python em comandos enviados para o sistema operacional!
+
+# ## HTML
 
 # # *Export*
 
@@ -41,6 +50,8 @@
 # 1. *--stdout*
 # 2. *--TemplateExporter.exclude_input_prompt=True*
 # 3. *--TagRemovePreprocessor.remove_input_tags = {"hide"}*
+
+# Usando pandoc descobri que dá pra exportar para **.doc**! Não ficou tão bom, mas ajuda!
 
 # # GitHub
 # 
@@ -59,11 +70,11 @@
 # Em uma tentativa de exportar o *Jupyter Notebook* para PDF tive problemas. O arquivo não era exportado e apresentava a seguinte mensagem de erro:
 # - *nbconvert failed: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex.*
 # 
-# Para solucionar, descobri que é necessário instalar, no Linux, akguns pacotes de aplicativos com os seguintes comandos:
+# Para solucionar, descobri que é necessário instalar, no Linux, akguns pacotes de aplicativos com os seguintes comandos, sendo o primeiro uma instalação mais compacta e o segundo uma instalação completa.
 # 
-# ```sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended```     # Versão Compacta
+# ```sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended```
 # 
-# ```sudo apt-get install texlive-full```      # Versão Completa
+# ```sudo apt-get install texlive-full```
 
 # # Referêcias
 # 
