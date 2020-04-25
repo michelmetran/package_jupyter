@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>jupyter</title>
+<title>test</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13074,160 +13074,49 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>Sumário<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Funções" data-toc-modified-id="Funções-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Funções</a></span><ul class="toc-item"><li><span><a href="#Variáveis-em-Markdowns" data-toc-modified-id="Variáveis-em-Markdowns-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Variáveis em <em>Markdowns</em></a></span></li><li><span><a href="#Linhas-de-Tabelas" data-toc-modified-id="Linhas-de-Tabelas-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Linhas de Tabelas</a></span></li><li><span><a href="#Comandos-do-Sistema" data-toc-modified-id="Comandos-do-Sistema-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Comandos do Sistema</a></span></li><li><span><a href="#HTML" data-toc-modified-id="HTML-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>HTML</a></span></li></ul></li><li><span><a href="#Export" data-toc-modified-id="Export-4"><span class="toc-item-num">4&nbsp;&nbsp;</span><em>Export</em></a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-6"><span class="toc-item-num">6&nbsp;&nbsp;</span><em>Requirements</em></a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;aaaaaaaaaaaaaaaaaaaaaaaa&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>aaaaaaaaaaaaaaaaaaaaaaaa
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introdu&#231;&#227;o">Introdu&#231;&#227;o<a class="anchor-link" href="#Introdu&#231;&#227;o">&#182;</a></h1><p>O <em>Jupyter Notebook</em> é a maneira que optei para escrever os códigos na linguagem <em>Python</em>, visto que além de rodar os códigos, é possível:</p>
-<ol>
-<li>Documentar os <em>scripts</em>, escrevendo o singnificado e objetivo de cada conjunto de comandos;</li>
-<li>Atualizar os meus repositórios na plataforma <strong>GitHub</strong>;</li>
-<li>Trabalhar com uma diversidade de opções de exportação do arquivo em formatos diversos, adaptados até mesmo para as simples leitura, como PDFs e Markdowns.</li>
-</ol>
-<p>É no procesos de exportação dos arquivos que eu me ative nessa publicação, pois um dos objetivos de longo prazo que busco é exportar relatórios padronizados, para distribuição geral e irrestrita, ou seja, quero algo que não seja inteligível apenas por pessoas que conhecem de programação.</p>
-<p>Para isso foram aqui apresentados um diversidade de opções para exportação de um arquivo <em>.ipynb</em>, sendo possível:</p>
-<ul>
-<li>Incluir apenas campos determinados;</li>
-<li>Incluir apenas as células que tenham determinada <em>tag</em>;</li>
-<li>Incluir apenas as células de <em>markdown</em>;</li>
-<li>Excluir as células de <em>outputs</em>.</li>
-</ul>
+</div>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Get-Jupyter-Notebook-filename">Get <em>Jupyter Notebook</em> filename<a class="anchor-link" href="#Get-Jupyter-Notebook-filename">&#182;</a></h1><p>Testei diversos comandos para obter o nome do <em>Jupyter Notebook</em> em uma variável. A melhor opçãoque encontrei estava nesse <a href="https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name"><em>post</em></a> que tem diversas outras opções.</p>
 
 </div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Fun&#231;&#245;es">Fun&#231;&#245;es<a class="anchor-link" href="#Fun&#231;&#245;es">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Vari&#225;veis-em-Markdowns">Vari&#225;veis em <em>Markdowns</em><a class="anchor-link" href="#Vari&#225;veis-em-Markdowns">&#182;</a></h2><p>Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que <strong>a={{a}}</strong>.</p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
+    </div>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>O mesmo pode ser feito com tabelas. Em tentativa de inserir tabelas diretamente do Pandas não obtive sucesso... Depois temos dataframe modificado pelo <em>.to_html()</em>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html">função</a> que fornece várias opções a serem exploradas.
-{{df_html}}</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linhas-de-Tabelas">Linhas de Tabelas<a class="anchor-link" href="#Linhas-de-Tabelas">&#182;</a></h2><p>Descobri que <a href="https://stackoverflow.com/questions/38783027/jupyter-notebook-display-two-pandas-tables-side-by-side">nesse <em>post</em></a> que é possível trabalhar para inserir também mais de uma tabela alinhada.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Comandos-do-Sistema">Comandos do Sistema<a class="anchor-link" href="#Comandos-do-Sistema">&#182;</a></h2><p>Praticamente  qualquer  comando  do  sistema  pode  ser  acessado  usando previamente <strong>!</strong>,  o  qual  passa qualquer comando subsequente diretamente para o sistema operacional. Você pode até usar variáveis python em comandos enviados para o sistema operacional!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="HTML">HTML<a class="anchor-link" href="#HTML">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Export"><em>Export</em><a class="anchor-link" href="#Export">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Os arquivos Jupyter Notebook podem ser exportados em diversos formatos, seja através do menu de opções, ou através dos comandos. Ao exportar, é possível definir diversas opções que limitam o que será exportado, podendo escolher determinados tipos de células ou, até mesmo, células invidivuais.</p>
-<p>No <em>post</em> <a href="https://stackoverflow.com/questions/57701538/jupyter-notebook-nbconvert-without-magic-commands-w-o-markdown">Jupyter Notebook nbconvert without Magic Commands/ w/o Markdown</a> é apresentado algumas opções de exportação. Incorporei várias delas no script <em>../codes/files/export_jupyter.py</em>. Ainda existem outras opções que não estudei a finalidade, listadas a seguir:</p>
-<ol>
-<li><em>--stdout</em></li>
-<li><em>--TemplateExporter.exclude_input_prompt=True</em></li>
-<li><em>--TagRemovePreprocessor.remove_input_tags = {"hide"}</em></li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Usando pandoc descobri que dá pra exportar para <strong>.doc</strong>! Não ficou tão bom, mas ajuda!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="GitHub">GitHub<a class="anchor-link" href="#GitHub">&#182;</a></h1><p>A partir do <em>post</em> <a href="http://mateos.io/blog/jupyter-notebook-in-git"><strong>How to Git Jupyter Notebooks the Right Way</strong></a>, compreendi que é considerada como <em>best pratices</em> no git de projetos escritos em <em>Jupyter Notebook</em> a aplicação de um determinado código usando o package <em>nbstripout</em>, conforme apresentado abaixo. No vídeo <a href="https://www.youtube.com/watch?v=BEMP4xacrVc"><strong>nbstripout: strip output from Jupyter and IPython notebooks</strong></a> é explicado detalhadamente como o comando atua.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Criei uma função para exportar o <em>Jupyter Notebook</em> em diversos formatos. Aproveitei para incorporar o comando do <code>nbstripout</code> na função que faz o <em>commit</em>, visando simplificar as coisas.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Requirements"><em>Requirements</em><a class="anchor-link" href="#Requirements">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>O comando <code>pip freeze</code> é o mais difundido na internet para se obter os <em>requirements.txt</em>, ou seja, o arquivo com o qual é possível indicar quais os <em>packages</em> necessários para rodar um determinado <em>script</em>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Tentei usar também o package <code>pipreqs</code>, porém ele não funciona em <em>Juptyter Notebook</em>. Descobri ainda que o comando <code>conda env export &gt; environment.yml</code> pode auxiliar na criação destes parâmetros.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Erros">Erros<a class="anchor-link" href="#Erros">&#182;</a></h1><p>Em uma tentativa de exportar o <em>Jupyter Notebook</em> para PDF tive problemas. O arquivo não era exportado e apresentava a seguinte mensagem de erro:</p>
-<ul>
-<li><em>nbconvert failed: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at <a href="https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex">https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex</a>.</em></li>
-</ul>
-<p>Para solucionar, descobri que é necessário instalar, no Linux, akguns pacotes de aplicativos com os seguintes comandos, sendo o primeiro uma instalação mais compacta e o segundo uma instalação completa.</p>
-<p><code>sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended</code></p>
-<p><code>sudo apt-get install texlive-full</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Refer&#234;cias">Refer&#234;cias<a class="anchor-link" href="#Refer&#234;cias">&#182;</a></h1><p>Há muita informação na internet sobre funcionalidades do <em>Jupyter Notebook</em>. Apenas para exemplificar, usei particialmente algumas das funções e truques apresentados em <a href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231"><strong>Jupyter Notebook Extensions</strong></a> e <a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts"><strong>28 Jupyter Notebook Tips, Tricks, and Shortcuts</strong></a>.</p>
-
-</div>
-</div>
 </div>
     </div>
   </div>

@@ -57,7 +57,7 @@
 # 
 # A partir do *post* [**How to Git Jupyter Notebooks the Right Way**](http://mateos.io/blog/jupyter-notebook-in-git), compreendi que é considerada como *best pratices* no git de projetos escritos em *Jupyter Notebook* a aplicação de um determinado código usando o package *nbstripout*, conforme apresentado abaixo. No vídeo [**nbstripout: strip output from Jupyter and IPython notebooks**](https://www.youtube.com/watch?v=BEMP4xacrVc) é explicado detalhadamente como o comando atua.
 
-# Criei uma função para exportar o *Jupyter Notebook* em diversos formatos. Acredito que seja possível incorporar o código do ```nbstripout``` na função que faz o *commit*, visando simplificar as coisas.
+# Criei uma função para exportar o *Jupyter Notebook* em diversos formatos. Aproveitei para incorporar o comando do ```nbstripout``` na função que faz o *commit*, visando simplificar as coisas.
 
 # # *Requirements*
 
