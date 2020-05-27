@@ -23,10 +23,12 @@ Testei diversos comandos para obter o nome do *Jupyter Notebook* em uma variáve
 # Funções
 
 ## Variáveis em *Markdowns*
-Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que **a={{a}}**.
+Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que **a=<p><strong>NameError</strong>: name &#39;a&#39; is not defined</p>
+**.
 
 O mesmo pode ser feito com tabelas. Em tentativa de inserir tabelas diretamente do Pandas não obtive sucesso... Depois temos dataframe modificado pelo *.to_html()*, [função](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html) que fornece várias opções a serem exploradas.
-{{df_html}}
+<p><strong>NameError</strong>: name &#39;df_html&#39; is not defined</p>
+
 
 ## Linhas de Tabelas
 
