@@ -22,7 +22,7 @@ decorator==4.4.2
 defusedxml==0.6.0
 descartes==1.1.0
 df2gspread==1.0.4
-Django==3.0.5
+Django==3.0.7
 docopt==0.6.2
 entrypoints==0.3
 Fiona==1.8.13
