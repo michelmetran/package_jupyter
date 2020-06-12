@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
+<head><meta charset="utf-8">
 
 <title>jupyter</title>
 
@@ -13029,6 +13029,8 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
+}div#notebook-container{
+  padding: 6ex 12ex 8ex 12ex;
 }@media print {
   div.cell {
     display: block;
@@ -13076,14 +13078,15 @@ div#notebook {
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>Sumário<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introdução" data-toc-modified-id="Introdução-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introdução</a></span></li><li><span><a href="#Get-Jupyter-Notebook-filename" data-toc-modified-id="Get-Jupyter-Notebook-filename-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Get <em>Jupyter Notebook</em> filename</a></span></li><li><span><a href="#Funções" data-toc-modified-id="Funções-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Funções</a></span><ul class="toc-item"><li><span><a href="#Variáveis-em-Markdowns" data-toc-modified-id="Variáveis-em-Markdowns-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Variáveis em <em>Markdowns</em></a></span></li><li><span><a href="#Linhas-de-Tabelas" data-toc-modified-id="Linhas-de-Tabelas-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Linhas de Tabelas</a></span></li><li><span><a href="#Comandos-do-Sistema" data-toc-modified-id="Comandos-do-Sistema-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Comandos do Sistema</a></span></li><li><span><a href="#HTML" data-toc-modified-id="HTML-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>HTML</a></span></li></ul></li><li><span><a href="#Export" data-toc-modified-id="Export-4"><span class="toc-item-num">4&nbsp;&nbsp;</span><em>Export</em></a></span></li><li><span><a href="#GitHub" data-toc-modified-id="GitHub-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>GitHub</a></span></li><li><span><a href="#Requirements" data-toc-modified-id="Requirements-6"><span class="toc-item-num">6&nbsp;&nbsp;</span><em>Requirements</em></a></span></li><li><span><a href="#Erros" data-toc-modified-id="Erros-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Erros</a></span></li><li><span><a href="#Referêcias" data-toc-modified-id="Referêcias-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>Referêcias</a></span></li></ul></div>
+<hr>
+<hr>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introdu&#231;&#227;o">Introdu&#231;&#227;o<a class="anchor-link" href="#Introdu&#231;&#227;o">&#182;</a></h1><p>O <em>Jupyter Notebook</em> é a maneira que optei para escrever os códigos na linguagem <em>Python</em>, visto que além de rodar os códigos, é possível:</p>
+<h1 id="Introdução">Introdução<a class="anchor-link" href="#Introdu%C3%A7%C3%A3o">¶</a></h1><p>O <em>Jupyter Notebook</em> é a maneira que optei para escrever os códigos na linguagem <em>Python</em>, visto que além de rodar os códigos, é possível:</p>
 <ol>
 <li>Documentar os <em>scripts</em>, escrevendo o singnificado e objetivo de cada conjunto de comandos;</li>
 <li>Atualizar os meus repositórios na plataforma <strong>GitHub</strong>;</li>
@@ -13101,61 +13104,315 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">folium</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">'docs'</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Get-Jupyter-Notebook-filename">Get <em>Jupyter Notebook</em> filename<a class="anchor-link" href="#Get-Jupyter-Notebook-filename">&#182;</a></h1><p>Testei diversos comandos para obter o nome do <em>Jupyter Notebook</em> em uma variável. A melhor opçãoque encontrei estava nesse <a href="https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name"><em>post</em></a> que tem diversas outras opções.</p>
+<h1 id="Get-Jupyter-Notebook-filename">Get <em>Jupyter Notebook</em> filename<a class="anchor-link" href="#Get-Jupyter-Notebook-filename">¶</a></h1><p>Testei diversos comandos para obter o nome do <em>Jupyter Notebook</em> em uma variável. A melhor opção que encontrei estava nesse <a href="https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name"><em>post</em></a> que tem diversas outras opções.</p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#https://getbootstrap.com/docs/4.0/components/alerts/</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+
+<span class="kd">var</span> <span class="nx">kernel</span> <span class="o">=</span> <span class="nx">IPython</span><span class="p">.</span><span class="nx">notebook</span><span class="p">.</span><span class="nx">kernel</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="nx">attribs</span> <span class="o">=</span> <span class="nx">body</span><span class="p">.</span><span class="nx">attributes</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">command</span> <span class="o">=</span> <span class="s1">'ipynb_filename = '</span> <span class="o">+</span> <span class="s1">'"'</span> <span class="o">+</span> <span class="nx">attribs</span><span class="p">[</span><span class="s1">'data-notebook-name'</span><span class="p">].</span><span class="nx">value</span> <span class="o">+</span> <span class="s1">'"'</span><span class="p">;</span>
+<span class="nx">kernel</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="nx">command</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ipynb_filename</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+
+<span class="kd">var</span> <span class="nx">kernel</span> <span class="o">=</span> <span class="nx">IPython</span><span class="p">.</span><span class="nx">notebook</span><span class="p">.</span><span class="nx">kernel</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">nb</span> <span class="o">=</span> <span class="nx">IPython</span><span class="p">.</span><span class="nx">notebook</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">command</span> <span class="o">=</span> <span class="s1">'ipynb_pathname = '</span> <span class="o">+</span> <span class="s1">'"'</span> <span class="o">+</span> <span class="nx">nb</span><span class="p">.</span><span class="nx">base_url</span> <span class="o">+</span> <span class="nx">nb</span><span class="p">.</span><span class="nx">notebook_path</span> <span class="o">+</span> <span class="s1">'"'</span><span class="p">;</span>
+<span class="nx">kernel</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="nx">command</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ipynb_pathname</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#%run '../codes/files/get_jupyternotebook_name.py'</span>
+<span class="c1">#name = get_jupyternotebook_name()</span>
+<span class="c1">#name</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Fun&#231;&#245;es">Fun&#231;&#245;es<a class="anchor-link" href="#Fun&#231;&#245;es">&#182;</a></h1>
+<h1 id="Funções">Funções<a class="anchor-link" href="#Fun%C3%A7%C3%B5es">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Vari&#225;veis-em-Markdowns">Vari&#225;veis em <em>Markdowns</em><a class="anchor-link" href="#Vari&#225;veis-em-Markdowns">&#182;</a></h2><p>Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que <strong>a=<p><strong>NameError</strong>: name &#39;a&#39; is not defined</p></strong>.</p>
+<h2 id="Variáveis-em-Markdowns">Variáveis em <em>Markdowns</em><a class="anchor-link" href="#Vari%C3%A1veis-em-Markdowns">¶</a></h2><p>Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo </p><p><strong>NameError</strong>: name 'a' is not defined</p>
+. Logo, se eu alterar o valor de a para qualquer um terei que <strong>a=<p><strong>NameError</strong>: name 'a' is not defined</p></strong>.
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>O mesmo pode ser feito com tabelas. Em tentativa de inserir tabelas diretamente do Pandas não obtive sucesso... Depois temos dataframe modificado pelo <em>.to_html()</em>, <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html">função</a> que fornece várias opções a serem exploradas.</p>
-<p><strong>NameError</strong>: name &#39;df_html&#39; is not defined</p>
+<p><strong>NameError</strong>: name 'df_html' is not defined</p>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"A"</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.6666</span><span class="p">],</span> <span class="s2">"B"</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.12134</span><span class="p">,</span> <span class="mf">5.674</span><span class="p">,</span> <span class="mf">6.13215</span><span class="p">]})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_html</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span>
+<span class="n">df_html</span> <span class="o">=</span> <span class="n">df_html</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+<span class="n">df_html</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linhas-de-Tabelas">Linhas de Tabelas<a class="anchor-link" href="#Linhas-de-Tabelas">&#182;</a></h2><p>Descobri que <a href="https://stackoverflow.com/questions/38783027/jupyter-notebook-display-two-pandas-tables-side-by-side">nesse <em>post</em></a> que é possível trabalhar para inserir também mais de uma tabela alinhada.</p>
+<h2 id="Linhas-de-Tabelas">Linhas de Tabelas<a class="anchor-link" href="#Linhas-de-Tabelas">¶</a></h2><p>Descobri que <a href="https://stackoverflow.com/questions/38783027/jupyter-notebook-display-two-pandas-tables-side-by-side">nesse <em>post</em></a> que é possível trabalhar para inserir também mais de uma tabela alinhada.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="n">CSS</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">.output {</span>
+<span class="s2">    flex-direction: row;</span>
+<span class="s2">}</span>
+<span class="s2">"""</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;style&gt;</span><span class="si">{}</span><span class="s1">&lt;/style&gt;'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">CSS</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comandos-do-Sistema">Comandos do Sistema<a class="anchor-link" href="#Comandos-do-Sistema">¶</a></h2><p>Praticamente  qualquer  comando  do  sistema  pode  ser  acessado  usando previamente <strong>!</strong>,  o  qual  passa qualquer comando subsequente diretamente para o sistema operacional. Você pode até usar variáveis python em comandos enviados para o sistema operacional!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_type</span> <span class="o">=</span><span class="s1">'ipynb'</span>
+
+<span class="o">!</span>ls ./*<span class="nv">$file_type</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="HTML">HTML<a class="anchor-link" href="#HTML">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%HTML</span>
+This is <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>really<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> neat!
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Referêcias">Referêcias<a class="anchor-link" href="#Refer%C3%AAcias">¶</a></h1><p>Há muita informação na internet sobre funcionalidades do <em>Jupyter Notebook</em>. Apenas para exemplificar, usei particialmente algumas das funções e truques apresentados em <a href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231"><strong>Jupyter Notebook Extensions</strong></a> e <a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts"><strong>28 Jupyter Notebook Tips, Tricks, and Shortcuts</strong></a>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Comandos-do-Sistema">Comandos do Sistema<a class="anchor-link" href="#Comandos-do-Sistema">&#182;</a></h2><p>Praticamente  qualquer  comando  do  sistema  pode  ser  acessado  usando previamente <strong>!</strong>,  o  qual  passa qualquer comando subsequente diretamente para o sistema operacional. Você pode até usar variáveis python em comandos enviados para o sistema operacional!</p>
-
+<hr>
+<h1 id="Exportando-o-Juptyter-Notebook">Exportando o <em>Juptyter Notebook</em><a class="anchor-link" href="#Exportando-o-Juptyter-Notebook">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="HTML">HTML<a class="anchor-link" href="#HTML">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Export"><em>Export</em><a class="anchor-link" href="#Export">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>O arquivo <em>.ipynb</em> pode ser exportado em formatos diversos. Abaixo carrego uma função que escrevi para facilitar o processo de exportação do arquivo em diferentes locais do PC para, posteriormente, atualizar os repositórios contidos no <a title="Link do GitHub" href="https://github.com/michelmetran" target="_blank">*GitHub*</a>.</p>
+<p>Com as funções para exportar o <em>Jupyter Notebook</em> e para obter o nome do arquivo <em>.ipynb</em> carregadas, basta exportar o arquivo, inicialmente para a pasta <em>docs</em> dentro do projeto e também, visando atualizar os <em>posts</em> do site, para a respectiva pasta.</p>
+<hr>
 <p>Os arquivos Jupyter Notebook podem ser exportados em diversos formatos, seja através do menu de opções, ou através dos comandos. Ao exportar, é possível definir diversas opções que limitam o que será exportado, podendo escolher determinados tipos de células ou, até mesmo, células invidivuais.</p>
 <p>No <em>post</em> <a href="https://stackoverflow.com/questions/57701538/jupyter-notebook-nbconvert-without-magic-commands-w-o-markdown">Jupyter Notebook nbconvert without Magic Commands/ w/o Markdown</a> é apresentado algumas opções de exportação. Incorporei várias delas no script <em>../codes/files/export_jupyter.py</em>. Ainda existem outras opções que não estudei a finalidade, listadas a seguir:</p>
 <ol>
@@ -13167,6 +13424,164 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Parâmetros</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">today</span> <span class="o">=</span> <span class="s1">'2020-06-11'</span>
+
+<span class="c1"># Input/ Output</span>
+<span class="n">inp</span> <span class="o">=</span> <span class="s1">'jupyter.ipynb'</span>
+<span class="c1">#out = os.path.join('docs', today + '-' + inp.split('.')[0])</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'docs'</span><span class="p">,</span> <span class="n">inp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Exportar para</span>
+<span class="n">ext</span> <span class="o">=</span> <span class="s1">'python'</span>                        <span class="c1"># 'html', 'markdown', 'latex', 'pdf', 'python'</span>
+
+<span class="c1"># Remover células taggeadas com:</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="s1">'remove_cell'</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter-nbconvert <span class="nv">$inp</span><span class="err">\</span>
+<span class="o">--</span><span class="n">to</span> <span class="err">$</span><span class="n">ext</span>\
+<span class="o">--</span><span class="n">TagRemovePreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TagRemovePreprocessor</span><span class="o">.</span><span class="n">remove_cell_tags</span><span class="o">=</span><span class="s1">'["'</span><span class="err">$</span><span class="n">tag</span><span class="s1">'"]'</span>\
+<span class="o">--</span><span class="n">ClearOutputPreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_markdown</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_code_cell</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_output</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_raw</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_input_prompt</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">output</span> <span class="err">$</span><span class="n">out</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Outro maneira é</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://stackoverflow.com/questions/53060589/how-to-download-from-jupyter-notebook-without-extra-comments">https://stackoverflow.com/questions/53060589/how-to-download-from-jupyter-notebook-without-extra-comments</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'docs'</span><span class="p">,</span> <span class="s1">'jupyter'</span><span class="p">)</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="s2">"['remove_cell']"</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'jupyter-nbconvert jupyter.ipynb</span><span class="se">\</span>
+<span class="s1">          --to pdf</span><span class="se">\</span>
+<span class="s1">          --TagRemovePreprocessor.enabled=True</span><span class="se">\</span>
+<span class="s1">          --ClearOutputPreprocessor.enabled=True</span><span class="se">\</span>
+<span class="s1">          --TemplateExporter.exclude_markdown=False</span><span class="se">\</span>
+<span class="s1">          --TemplateExporter.exclude_code_cell=True</span><span class="se">\</span>
+<span class="s1">          --TemplateExporter.exclude_output=True</span><span class="se">\</span>
+<span class="s1">          --TemplateExporter.exclude_raw=False</span><span class="se">\</span>
+<span class="s1">          --TemplateExporter.exclude_input_prompt=True</span><span class="se">\</span>
+<span class="s1">          --TemplateExporter.exclude_output_prompt=True</span><span class="se">\</span>
+<span class="s1">          --TagRemovePreprocessor.remove_cell_tags="'</span><span class="o">+</span> <span class="n">tag</span> <span class="o">+</span><span class="s1">'"</span><span class="se">\</span>
+<span class="s1">          --output '</span><span class="o">+</span> <span class="n">out</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ainda tem essa função</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> '../codes/files/export_jupyter.py'
+
+<span class="n">export_jupyter</span><span class="p">(</span><span class="n">ipynb_filename</span><span class="p">,</span> <span class="s1">'docs'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'html'</span><span class="p">,</span> <span class="s1">'markdown'</span><span class="p">,</span> <span class="s1">'pdf'</span><span class="p">,</span> <span class="s1">'python'</span><span class="p">],</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span>
+<span class="kn">import</span> <span class="nn">nbconvert</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span><span class="p">,</span> <span class="n">PythonExporter</span>
+<span class="kn">from</span> <span class="nn">nbconvert.writers</span> <span class="kn">import</span> <span class="n">FilesWriter</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pip install notebooktoall</span>
+<span class="c1">#https://github.com/notebooktoall/notebooktoall/blob/master/notebooktoall/transform.py</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">notebooktoall.transform</span> <span class="kn">import</span> <span class="n">transform_notebook</span>
+
+<span class="n">transform_notebook</span><span class="p">(</span><span class="n">ipynb_file</span><span class="o">=</span><span class="n">ipynb_filename</span><span class="p">,</span> <span class="n">export_list</span><span class="o">=</span><span class="p">[</span><span class="s1">'html'</span><span class="p">,</span> <span class="s1">'py'</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Usando pandoc descobri que dá pra exportar para <strong>.doc</strong>! Não ficou tão bom, mas ajuda!</p>
@@ -13174,12 +13589,69 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_wo_ext</span> <span class="o">=</span> <span class="n">ipynb_filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">file_md</span> <span class="o">=</span> <span class="n">file_wo_ext</span><span class="o">+</span><span class="s1">'.md'</span>
+<span class="n">file_doc</span> <span class="o">=</span> <span class="n">file_wo_ext</span><span class="o">+</span><span class="s1">'.docx'</span>
+
+<span class="n">file_doc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'docs'</span><span class="p">,</span> <span class="n">file_doc</span><span class="p">)</span>
+<span class="n">file_md</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'docs'</span><span class="p">,</span> <span class="n">file_md</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pandoc -o <span class="nv">$file_doc</span> -f markdown -t docx <span class="nv">$file_md</span> --reference-links
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="GitHub">GitHub<a class="anchor-link" href="#GitHub">&#182;</a></h1><p>A partir do <em>post</em> <a href="http://mateos.io/blog/jupyter-notebook-in-git"><strong>How to Git Jupyter Notebooks the Right Way</strong></a>, compreendi que é considerada como <em>best pratices</em> no git de projetos escritos em <em>Jupyter Notebook</em> a aplicação de um determinado código usando o package <em>nbstripout</em>, conforme apresentado abaixo. No vídeo <a href="https://www.youtube.com/watch?v=BEMP4xacrVc"><strong>nbstripout: strip output from Jupyter and IPython notebooks</strong></a> é explicado detalhadamente como o comando atua.</p>
+<h1 id="GitHub">GitHub<a class="anchor-link" href="#GitHub">¶</a></h1><p>A partir do <em>post</em> <a href="http://mateos.io/blog/jupyter-notebook-in-git"><strong>How to Git Jupyter Notebooks the Right Way</strong></a>, compreendi que é considerada como <em>best pratices</em> no git de projetos escritos em <em>Jupyter Notebook</em> a aplicação de um determinado código usando o package <em>nbstripout</em>, conforme apresentado abaixo. No vídeo <a href="https://www.youtube.com/watch?v=BEMP4xacrVc"><strong>nbstripout: strip output from Jupyter and IPython notebooks</strong></a> é explicado detalhadamente como o comando atua.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nbstripout --install --attributes .gitattributes
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#os.system('nbstripout --install --attributes .gitattributes')</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13188,9 +13660,49 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nbstripout --install --attributes .gitattributes
+<span class="o">!</span>git status
+<span class="o">!</span>gitt add .
+<span class="o">!</span>git commit -m <span class="s1">'sss'</span>
+<span class="o">!</span>git push
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> '../codes/git/update_github.py'
+
+<span class="n">git_full</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="s1">'Atualizando'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Requirements"><em>Requirements</em><a class="anchor-link" href="#Requirements">&#182;</a></h1>
+<p>Após as exportações dos arquivos nos formatos necessários, basta atualizar o repositório diretamente pelo  <em>Jupyter Notebook</em>.
+Abaixo é atualizado o repositório desse projeto específico, bem como a derivação desse projeto no <a title="Link do Folium" href="https://michelmetran.github.io/" target="_blank">**_site_**</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Requirements"><em>Requirements</em><a class="anchor-link" href="#Requirements">¶</a></h1>
 </div>
 </div>
 </div>
@@ -13201,6 +13713,19 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">freeze</span> <span class="o">&gt;</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Tentei usar também o package <code>pipreqs</code>, porém ele não funciona em <em>Juptyter Notebook</em>. Descobri ainda que o comando <code>conda env export &gt; environment.yml</code> pode auxiliar na criação destes parâmetros.</p>
@@ -13208,9 +13733,51 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Cria o mapa</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">23.9619271</span><span class="p">,</span><span class="o">-</span><span class="mf">46.3427499</span><span class="p">],</span>
+    <span class="n">zoom_start</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pip install pipreqs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pipreqs <span class="s1">'docs'</span> --force --debug --print
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Erros">Erros<a class="anchor-link" href="#Erros">&#182;</a></h1><p>Em uma tentativa de exportar o <em>Jupyter Notebook</em> para PDF tive problemas. O arquivo não era exportado e apresentava a seguinte mensagem de erro:</p>
+<h1 id="Erros">Erros<a class="anchor-link" href="#Erros">¶</a></h1><p>Em uma tentativa de exportar o <em>Jupyter Notebook</em> para PDF tive problemas. O arquivo não era exportado e apresentava a seguinte mensagem de erro:</p>
 <ul>
 <li><em>nbconvert failed: xelatex not found on PATH, if you have not installed xelatex you may need to do so. Find further instructions at <a href="https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex">https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex</a>.</em></li>
 </ul>
@@ -13221,12 +13788,144 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Refer&#234;cias">Refer&#234;cias<a class="anchor-link" href="#Refer&#234;cias">&#182;</a></h1><p>Há muita informação na internet sobre funcionalidades do <em>Jupyter Notebook</em>. Apenas para exemplificar, usei particialmente algumas das funções e truques apresentados em <a href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231"><strong>Jupyter Notebook Extensions</strong></a> e <a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts"><strong>28 Jupyter Notebook Tips, Tricks, and Shortcuts</strong></a>.</p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<h1 id="Encerramento">Encerramento<a class="anchor-link" href="#Encerramento">¶</a></h1>
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Export-to--docs"><em>Export to</em>  docs<a class="anchor-link" href="#Export-to--docs">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Input</span>
+<span class="n">inp</span> <span class="o">=</span> <span class="s1">'jupyter.ipynb'</span>
+
+<span class="c1"># Output</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">'docs'</span><span class="p">,</span> <span class="n">inp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Extension to export ('html', 'html_embed', 'markdown', 'latex', 'pdf', 'python')</span>
+<span class="n">ext</span> <span class="o">=</span> <span class="s1">'html_embed'</span>
+
+<span class="c1"># Remove cells with tag</span>
+<span class="n">tag</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"['"</span> <span class="o">+</span> <span class="s1">'"remove_cell"'</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="s1">'"yaml"'</span> <span class="o">+</span> <span class="s2">"']"</span><span class="p">)</span>
+<span class="o">!</span><span class="nb">echo</span> <span class="nv">$tag</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter-nbconvert <span class="nv">$inp</span><span class="err">\</span>
+<span class="o">--</span><span class="n">to</span> <span class="err">$</span><span class="n">ext</span>\
+<span class="o">--</span><span class="n">TagRemovePreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TagRemovePreprocessor</span><span class="o">.</span><span class="n">remove_cell_tags</span><span class="o">=</span><span class="err">$</span><span class="n">tag</span>\
+<span class="o">--</span><span class="n">ClearOutputPreprocessor</span><span class="o">.</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_markdown</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_code_cell</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_output</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_raw</span><span class="o">=</span><span class="kc">False</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_input_prompt</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">TemplateExporter</span><span class="o">.</span><span class="n">exclude_output_prompt</span><span class="o">=</span><span class="kc">True</span>\
+<span class="o">--</span><span class="n">output</span> <span class="err">$</span><span class="n">out</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>

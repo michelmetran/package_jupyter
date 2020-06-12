@@ -18,17 +18,15 @@ Para isso foram aqui apresentados um diversidade de opções para exportação d
 
 # Get *Jupyter Notebook* filename
 
-Testei diversos comandos para obter o nome do *Jupyter Notebook* em uma variável. A melhor opçãoque encontrei estava nesse [*post*](https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name) que tem diversas outras opções.
+Testei diversos comandos para obter o nome do *Jupyter Notebook* em uma variável. A melhor opção que encontrei estava nesse [*post*](https://stackoverflow.com/questions/12544056/how-do-i-get-the-current-ipython-jupyter-notebook-name) que tem diversas outras opções.
 
 # Funções
 
 ## Variáveis em *Markdowns*
-Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo { {a} }. Logo, se eu alterar o valor de a para qualquer um terei que **a=<p><strong>NameError</strong>: name &#39;a&#39; is not defined</p>
-**.
+Para inserir uma variável em uma célula markdow para eu inserir a variável entre colchetes duplos, por exemplo 10. Logo, se eu alterar o valor de a para qualquer um terei que **a=10**.
 
 O mesmo pode ser feito com tabelas. Em tentativa de inserir tabelas diretamente do Pandas não obtive sucesso... Depois temos dataframe modificado pelo *.to_html()*, [função](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_html.html) que fornece várias opções a serem exploradas.
-<p><strong>NameError</strong>: name &#39;df_html&#39; is not defined</p>
-
+<div><style scoped>    .dataframe tbody tr th:only-of-type {        vertical-align: middle;    }    .dataframe tbody tr th {        vertical-align: top;    }    .dataframe thead th {        text-align: right;    }</style><table border="1" class="dataframe">  <thead>    <tr style="text-align: center;">      <th>A</th>      <th>B</th>    </tr>  </thead>  <tbody>    <tr>      <td>1.0000</td>      <td>4.12134</td>    </tr>    <tr>      <td>2.2000</td>      <td>5.67400</td>    </tr>    <tr>      <td>3.6666</td>      <td>6.13215</td>    </tr>  </tbody></table></div>
 
 ## Linhas de Tabelas
 
